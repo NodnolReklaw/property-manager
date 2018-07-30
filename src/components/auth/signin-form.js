@@ -12,7 +12,7 @@ class SigninForm extends Component {
                     <FormTitle className='sign-in-form__title' text='Login'/>
                     <Field className='sign-in-form__email' placeholder='Enter Email' title='Email' component={FormInput} name='email' type='email'/>
                     <Field className='sign-in-form__password' placeholder='Enter Password' title='Password' component={FormInput} name='password' type='password'/>
-                    <Field className='sign-in-form__login'  title='Submit' component={FormButton} name='login' type='button'/>
+                    <Field className='sign-in-form__login'  title='Login' component={FormButton} name='login' type='button'/>
                     <div className='sign-in-form__text-links'>
                     <TextLink to='/forgot' text='Forgot Password'></TextLink>
                     <TextLink to='/signup' text='Not a member? Register here'></TextLink>
@@ -24,7 +24,7 @@ class SigninForm extends Component {
 }
 
 SigninForm = reduxForm({
-    form: 'Signin'
+    form: 'signin'
 })(SigninForm);
 
 export default SigninForm;
