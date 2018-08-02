@@ -1,12 +1,14 @@
 .tab-nav {
    display: grid;
     grid-template-rows: [tab-s] 50px [tab-e content-s] 1fr [content-e];
+
+    height: 100%;
     &__tabs {
         grid-row: tab-s/tab-e;
         
 
         display: grid;
-        grid-template-rows: 1fr;
+        grid-template-rows: [s]1fr [m] 1fr 1fr[e];
         grid-template-columns: repeat(auto-fill, 1fr);
         grid-auto-flow: column;
         justify-items: center;
@@ -18,13 +20,21 @@
         border-bottom: 1px solid $color-grey-E6;
     }
     &__tab {
+        grid-row: m/e;
+        height: 100%;
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2rem;
         text-align: center;
         width: 9rem;
-       // padding-bottom: 2rem;
-        //border-bottom: 1px solid $color-red-BA;
+       // padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
         
+    }
+
+    &__active {
+        //padding-bottom: 0px;
+        color: $color-red-BA;
+        border-bottom: 2px solid $color-red-BA;
     }
 }

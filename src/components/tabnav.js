@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 
+
 class TabNav extends Component {
     render() {
         return (
@@ -9,7 +10,8 @@ class TabNav extends Component {
             <div className='tab-nav__tabs'>
                 {
                     this.props.tabs.map((tab, index) => {
-                        return <a key={index} onClick={() =>  this.props.handleTabChange(tab.title)} className='tab-nav__tab'>{tab.title}</a>
+                        const className = `tab-nav__tab ${tab.active ? 'tab-nav__active' : ''}`
+                        return <a key={index} onClick={() =>  this.props.handleClick(tab.title)} className={className}>{tab.title}</a>
                     })
                 }
             </div>
@@ -18,7 +20,7 @@ class TabNav extends Component {
                 this.props.tabs.map((tab, index) => {
                     if(tab.active) {
                         return (
-                            <div className='tab-nav__component'>
+                            <div key={index} className='tab-nav__component'>
                                 {tab.component}
                             </div>
                         )
