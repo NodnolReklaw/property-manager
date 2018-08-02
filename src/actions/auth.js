@@ -26,9 +26,9 @@ export function signUp(fields, success) {
 }
 
 export function signIn(fields, success) {
-    return funciton(dispatch) {
+    return function(dispatch) {
         axios.post(`${ROOT_URL}/signIn`, fields);
-        .then(response => {
+        then(response => {
             const { token } = response.data;
             localStorage.setItem('token', token);
             dispatch({
