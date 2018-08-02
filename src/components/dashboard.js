@@ -23,10 +23,14 @@ class Dashboard extends Component {
         }
     }
 
+    handleTabChange = (title) => {
+
+    }
+
     render() {
       return (
         <div className='dashboard'>
-            <TabNav tabs={this.state.tabs}/>
+            <TabNav handleTabChange={(title) => this.handleTabChange(title)} tabs={this.state.tabs}/>
         </div>
       )
       
