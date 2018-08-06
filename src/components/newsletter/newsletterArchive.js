@@ -4,7 +4,11 @@ function ArchiveItem({title, date}) {
     return(
         <div className='archive-item archive-items__item'>
             <div className='archive-item__title'> {title}</div>
-            <div className='archive-item__date'>{date}</div>
+            <div className='archive-item__date'>
+                { date.getMoth() }
+                { date.getDate() }
+                { date.getFullYear() - 2000 }
+            </div>
         </div>
     )
 }
