@@ -6,29 +6,40 @@
     grid-template-rows: [s] 258px [m] 405px [e];
     grid-template-columns: [s] 1fr [e];
 
-    
+    border: 1px solid $color-grey-E6;
+    background-color: .5rem;
 
     & > * {
         grid-column: s/e;
+        grid-row: s/m;
     }
 
     &__title,
     &__image {
         justify-self: center;
         align-self: center;
+        
+
     }
 
     &__title {
         grid-row: s/m;
+        color: white;
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 5rem;
+        text-align: center;
     }
-    &__image {
+    img {
         grid-row: s/m;
         z-index: -10;
     }
     &__body {
         grid-row: m/e;
         p {
-
+            margin: 6.3rem 6.05rem;
+            line-height: 2rem;
+            font-size: 1.6rem;
         }
     }
 }
